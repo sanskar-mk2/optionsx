@@ -141,7 +141,6 @@ const templates = ref([
 
                 <!-- Categories -->
                 <div class="mb-6">
-                    {/* Category list */}
                     <div
                         v-for="category in categories"
                         :key="category.name"

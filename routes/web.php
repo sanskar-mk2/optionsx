@@ -31,7 +31,7 @@ Route::get('/pricing', function () {
 })->name('pricing');
 
 Route::get('/bundles', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('SignUp');
 })->name('bundles');
 
 Route::get('/login', function () {
@@ -43,7 +43,7 @@ Route::get('/cart', function () {
 })->name('cart.index');
 
 Route::get('/sell', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Sell');
 })->name('sell');
 
 // Category routes
@@ -52,7 +52,7 @@ Route::get('/items', function () {
 })->name('items.index');
 
 Route::get('/wordpress', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Wordpress');
 })->name('wordpress.index');
 
 Route::get('/ecommerce', function () {
@@ -60,11 +60,11 @@ Route::get('/ecommerce', function () {
 })->name('ecommerce.index');
 
 Route::get('/shopify', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Fashion');
 })->name('shopify.index');
 
 Route::get('/elementor', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Announcements');
 })->name('elementor.index');
 
 Route::get('/html', function () {
@@ -76,7 +76,7 @@ Route::get('/marketing', function () {
 })->name('marketing.index');
 
 Route::get('/cms', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Creator');
 })->name('cms.index');
 
 Route::get('/templates', function () {
@@ -84,7 +84,7 @@ Route::get('/templates', function () {
 })->name('templates.index');
 
 Route::get('/themes/download', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Profile');
 })->name('themes.download');
 
 Route::get('/dashboard', function () {
@@ -97,4 +97,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
