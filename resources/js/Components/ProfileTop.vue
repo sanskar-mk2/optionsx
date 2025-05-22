@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import avatarPlaceholder from "../../assets/avatar-placeholder.png";
+import { Link } from "@inertiajs/vue3";
 
 const navItems = [
     { name: "Dashboard", active: true },
@@ -112,11 +113,12 @@ const selectedCategory = ref("");
                                 with our review team to make sure they are in
                                 great shape to start selling.
                             </p>
-                            <button
+                            <Link
+                                :href="route('upload')"
                                 class="w-full bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors"
                             >
                                 Upload now
-                            </button>
+                            </Link>
                         </div>
 
                         <!-- Profile Card -->

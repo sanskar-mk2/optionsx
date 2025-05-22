@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CreatorAuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -18,12 +20,33 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
+Route::get('/create-account', [CreatorAuthController::class, 'create_account'])->name('create-account');
+Route::get('/login', [CreatorAuthController::class, 'login'])->name('get_login');
+Route::post('/register', [CreatorAuthController::class, 'register'])->name('register');
+Route::post('/login', [CreatorAuthController::class, 'post_login'])->name('login');
+
 Route::get('/themes', function () {
     return Inertia::render('Themes');
 })->name('themes.index');
 
 Route::get('/freelancers', function () {
-    return Inertia::render('Welcome');
+    if (request()->id == '1') {
+        return Inertia::render('FreelancerHelp');
+    } elseif (request()->id == '2') {
+        return Inertia::render('FreelancerSetting');
+    } elseif (request()->id == '3') {
+        return Inertia::render('FreelancerEarning');
+    } elseif (request()->id == '4') {
+        return Inertia::render('FreelancerPerformance');
+    } elseif (request()->id == '5') {
+        return Inertia::render('FreelancerProject');
+    } elseif (request()->id == '6') {
+        return Inertia::render('FreelancerDashboard');
+    } elseif (request()->id == '7') {
+        return Inertia::render('FreelancerLandingPage');
+    } else {
+        return Inertia::render('Welcome');
+    }
 })->name('freelancers.index');
 
 Route::get('/pricing', function () {
@@ -34,9 +57,9 @@ Route::get('/bundles', function () {
     return Inertia::render('SignUp');
 })->name('bundles');
 
-Route::get('/login', function () {
-    return Inertia::render('Welcome');
-})->name('login');
+// Route::get('/login', function () {
+//     return Inertia::render('Welcome');
+// })->name('login');
 
 Route::get('/cart', function () {
     return Inertia::render('Cart');
@@ -45,6 +68,9 @@ Route::get('/cart', function () {
 Route::get('/sell', function () {
     return Inertia::render('Sell');
 })->name('sell');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/upload', [DashboardController::class, 'get_upload'])->name('upload');
 
 // Category routes
 Route::get('/items', function () {
@@ -87,9 +113,9 @@ Route::get('/themes/download', function () {
     return Inertia::render('Profile');
 })->name('themes.download');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -97,4 +123,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';

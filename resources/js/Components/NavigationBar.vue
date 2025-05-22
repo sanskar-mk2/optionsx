@@ -29,32 +29,35 @@ const cartCount = ref(1);
 
             <!-- Main Navigation -->
             <div class="flex items-center space-x-6">
-                <Link href="/themes" class="text-black hover:text-red-600">
+                <Link href="/themes" class="text-gray-800 hover:text-red-600 text-sm font-medium">
                     Web Themes & Templates
                 </Link>
-                <Link href="/freelancers" class="text-black hover:text-red-600">
+                <Link href="/freelancers" class="text-red-600 hover:text-red-700 text-sm font-medium">
                     Hire Freelancer
                 </Link>
-                <Link href="/pricing" class="text-black hover:text-red-600">
+                <Link href="/pricing" class="text-gray-800 hover:text-red-600 text-sm font-medium">
                     Pricing
                 </Link>
-                <Link href="/bundles" class="text-black hover:text-red-600">
+                <Link href="/bundling" class="text-gray-800 hover:text-red-600 text-sm font-medium">
                     Bundling
                 </Link>
             </div>
 
             <!-- Right Navigation -->
             <div class="flex items-center space-x-4">
+                <Link href="/community" class="text-gray-800 hover:text-red-600 text-sm font-medium">
+                    Community
+                </Link>
                 <Link
                     href="/sell"
-                    class="px-6 py-2 text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white"
+                    class="px-4 py-1.5 text-red-600 border border-red-600 rounded-md text-sm font-medium hover:bg-red-600 hover:text-white transition-colors"
                 >
                     Sell
                 </Link>
                 <Link href="/cart" class="relative">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6 text-gray-700"
+                        class="w-6 h-6 text-gray-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -68,14 +71,14 @@ const cartCount = ref(1);
                     </svg>
                     <span
                         v-if="cartCount > 0"
-                        class="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 text-xs text-white bg-red-600 rounded-full"
+                        class="absolute -top-2 -right-2 flex items-center justify-center w-4 h-4 text-xs text-white bg-red-600 rounded-full"
                     >
                         {{ cartCount }}
                     </span>
                 </Link>
                 <Link
                     href="/login"
-                    class="px-6 py-2 text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white"
+                    class="px-4 py-1.5 text-red-600 border border-red-600 rounded-md text-sm font-medium hover:bg-red-600 hover:text-white transition-colors"
                 >
                     Sign In
                 </Link>

@@ -1,4 +1,8 @@
 <script setup>
+import linkedinFooterIcon from "../../assets/linkedin-footer-icon.png";
+import instagramFooterIcon from "../../assets/instagram-footer-icon.png";
+import facebookFooterIcon from "../../assets/facebook-footer-icon.png";
+import twitterFooterIcon from "../../assets/twitter-footer-icon.png";
 const footerSections = {
     "All Category": [
         { name: "Site Templates", href: "#" },
@@ -46,7 +50,11 @@ const footerSections = {
             <!-- Logo -->
             <div class="mb-12">
                 <a href="#" class="inline-block">
-                    <img src="../../assets/logo.png" alt="Options X" class="h-8" />
+                    <img
+                        src="../../assets/logo.png"
+                        alt="Options X"
+                        class="h-12"
+                    />
                 </a>
             </div>
 
@@ -76,9 +84,46 @@ const footerSections = {
                     </ul>
                 </div>
             </div>
-
-            <!-- Optional: Add a bottom border -->
-            <div class="border-t border-gray-800 mt-16"></div>
         </div>
     </footer>
+    <div class="w-full px-12 py-4 bg-zinc-900">
+        <div class="flex md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center justify-center gap-4">
+                <p class="text-xs text-gray-400">
+                    © 2024 OptionsX Ltd. Trademarks and brands are the property
+                    of their respective owners.
+                </p>
+            </div>
+            <div class="flex space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img
+                        :src="linkedinFooterIcon"
+                        alt="LinkedIn"
+                        class="h-6 w-6"
+                    />
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img
+                        :src="instagramFooterIcon"
+                        alt="Instagram"
+                        class="h-6 w-6"
+                    />
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img
+                        :src="facebookFooterIcon"
+                        alt="Facebook"
+                        class="h-6 w-6"
+                    />
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img
+                        :src="twitterFooterIcon"
+                        alt="Twitter"
+                        class="h-6 w-6"
+                    />
+                </a>
+            </div>
+        </div>
+    </div>
 </template>
